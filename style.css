@@ -216,6 +216,8 @@ form button {
 .btn:hover {
   background: #00ddb3;
 } */
+
+
 .hero {
   background: linear-gradient(135deg, #0f2a44, #0b4fa2);
   color: white;
@@ -257,6 +259,115 @@ form button {
     font-size: 24px;
   }
 }
+
+/* SLIDER  */
+
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+/* Slides */
+
+.slide {
+  position: absolute;
+  inset: 0;
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #0f2a44, #0b4fa2);
+
+  transform: translateX(100%); /* default: always right side */
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide.active {
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.slide.exit {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+/* LEFT direction (default) */
+.slide.exit-left {
+  transform: translateX(-100%);
+}
+
+/* RIGHT direction (for prev arrow) */
+.slide.exit-right {
+  transform: translateX(100%);
+}
+
+/* slide jo left se enter kare */
+.slide.enter-left {
+  transform: translateX(-100%);
+}
+
+/* slide jo right se enter kare */
+.slide.enter-right {
+  transform: translateX(100%);
+}
+
+
+
+
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 22px;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.arrow.prev { left: 10px; }
+.arrow.next { right: 10px; }
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 6;
+}
+
+.dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots span.active {
+  background: #00e0b8;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .slider { min-height: 180px; }
+  .slide { padding: 40px 15px; }
+  .slide h1 { font-size: 22px; }
+}
+
+
+
+
+/* WHATAPPS BTN */
 .whatsapp-btn {
   position: fixed;
   bottom: 20px;
